@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Reporte para citas médicas -->
+        <record id="action_report_medical_appointment" model="ir.actions.report">
+            <field name="name">Reporte de Citas Médicas</field>
+            <field name="model">medical.appointment</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">module_name.report_medical_appointment</field>
+        </record>
+
+        <template id="report_medical_appointment">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h2>Reporte de Citas Médicas</h2>
+                    <t t-foreach="docs" t-as="doc">
+                        <p>Paciente: <span t-field="doc.patient_id.name"/></p>
+                        <p>Médico: <span t-field="doc.doctor_id.name"/></p>
+                        <p>Fecha: <span t-field="doc.appointment_date"/></p>
+                        <p>Hora: <span t-field="doc.appointment_time"/></p>
+                        <p>Notas: <span t-field="doc.notes"/></p>
+                    </t>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

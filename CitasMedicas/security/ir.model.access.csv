@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_medical_appointment_user,access.medical.appointment.user,model_medical_appointment,group_medical_appointment_user,1,0,0,0
+access_medical_appointment_manager,access.medical.appointment.manager,model_medical_appointment,group_medical_appointment_manager,1,1,1,1
+access_medical_patient_user,access.medical.patient.user,model_medical_patient,group_medical_appointment_user,1,0,0,0
+access_medical_patient_manager,access.medical.patient.manager,model_medical_patient,group_medical_appointment_manager,1,1,1,1
+access_medical_doctor_user,access.medical.doctor.user,model_medical_doctor,group_medical_appointment_user,1,0,0,0
+access_medical_doctor_manager,access.medical.doctor.manager,model_medical_doctor,group_medical_appointment_manager,1,1,1,1

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Definimos una categoría de seguridad para el módulo -->
+        <record model="ir.module.category" id="module_category_medical_appointment">
+            <field name="name">Citas Médicas</field>
+            <field name="description">Ayuda a gestionar las citas médicas</field>
+            <field name="sequence">100</field>
+        </record>
+
+        <!-- Grupo de usuarios para los usuarios del sistema de citas médicas -->
+        <record model="res.groups" id="group_medical_appointment_user">
+            <field name="name">Usuario</field>
+            <field name="category_id" ref="module_category_medical_appointment"/>
+            <field name="comment">Usuarios que gestionan citas médicas</field>
+        </record>
+
+        <!-- Grupo de usuarios para los directores del sistema de citas médicas -->
+        <record model="res.groups" id="group_medical_appointment_manager">
+            <field name="name">Director</field>
+            <field name="category_id" ref="module_category_medical_appointment"/>
+            <field name="comment">Usuarios que gestionan el sistema completo de citas médicas</field>
+            <!-- Los miembros del grupo director también son miembros del grupo de usuarios -->
+            <field name="implied_ids" eval="[(4, ref('group_medical_appointment_user'))]" />
+            <!-- agregamos a los usuarios administradores de Odoo -->
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+    </data>
+</odoo>

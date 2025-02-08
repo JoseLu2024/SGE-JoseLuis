@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Vista de formulario para citas médicas -->
+        <record id="view_medical_appointment_form" model="ir.ui.view">
+            <field name="name">medical.appointment.form</field>
+            <field name="model">medical.appointment</field>
+            <field name="arch" type="xml">
+                <form string="Cita Médica">
+                    <sheet>
+                        <group>
+                            <field name="patient_id"/>
+                            <field name="doctor_id"/>
+                            <field name="appointment_date"/>
+                            <field name="appointment_time"/>
+                            <field name="notes"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vista de árbol para citas médicas -->
+        <record id="view_medical_appointment_tree" model="ir.ui.view">
+            <field name="name">medical.appointment.tree</field>
+            <field name="model">medical.appointment</field>
+            <field name="arch" type="xml">
+                <tree string="Citas Médicas">
+                    <field name="patient_id"/>
+                    <field name="doctor_id"/>
+                    <field name="appointment_date"/>
+                    <field name="appointment_time"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista de búsqueda para citas médicas -->
+        <record id="view_medical_appointment_search" model="ir.ui.view">
+            <field name="name">medical.appointment.search</field>
+            <field name="model">medical.appointment</field>
+            <field name="arch" type="xml">
+                <search string="Buscar Citas Médicas">
+                    <field name="patient_id"/>
+                    <field name="doctor_id"/>
+                    <field name="appointment_date"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Acción para citas médicas -->
+        <record id="action_medical_appointment" model="ir.actions.act_window">
+            <field name="name">Citas Médicas</field>
+            <field name="res_model">medical.appointment</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Haga clic para crear una nueva cita médica.
+                </p>
+            </field>
+        </record>
+
+        <!-- Menú para citas médicas -->
+        <menuitem id="menu_medical_appointment_root" name="Citas Médicas" sequence="10"/>
+        <menuitem id="menu_medical_appointment" name="Citas" parent="menu_medical_appointment_root" action="action_medical_appointment" sequence="10"/>
+
+    </data>
+</odoo>

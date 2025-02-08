@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <record id="patient1" model="medical.patient">
+            <field name="name">Juan Perez</field>
+            <field name="dob">1980-06-15</field>
+            <field name="phone">+34 600 123 456</field>
+            <field name="email">juan.perez@example.com</field>
+        </record>
+        <record id="patient2" model="medical.patient">
+            <field name="name">Maria Garcia</field>
+            <field name="dob">1990-02-20</field>
+            <field name="phone">+34 600 654 321</field>
+            <field name="email">maria.garcia@example.com</field>
+        </record>
+
+        <record id="doctor1" model="medical.doctor">
+            <field name="name">Dr. Luis Martinez</field>
+            <field name="specialty">Cardiología</field>
+            <field name="phone">+34 600 789 012</field>
+            <field name="email">luis.martinez@example.com</field>
+        </record>
+        <record id="doctor2" model="medical.doctor">
+            <field name="name">Dra. Ana Lopez</field>
+            <field name="specialty">Pediatría</field>
+            <field name="phone">+34 600 345 678</field>
+            <field name="email">ana.lopez@example.com</field>
+        </record>
+
+        <record id="appointment1" model="medical.appointment">
+            <field name="patient_id" ref="patient1"/>
+            <field name="doctor_id" ref="doctor1"/>
+            <field name="appointment_date">2025-02-10</field>
+            <field name="appointment_time">10:30:00</field>
+            <field name="notes">Revisión anual</field>
+        </record>
+        <record id="appointment2" model="medical.appointment">
+            <field name="patient_id" ref="patient2"/>
+            <field name="doctor_id" ref="doctor2"/>
+            <field name="appointment_date">2025-02-11</field>
+            <field name="appointment_time">11:00:00</field>
+            <field name="notes">Control de rutina</field>
+        </record>
+    </data>
+</odoo>
