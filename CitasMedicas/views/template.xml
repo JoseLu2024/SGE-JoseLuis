@@ -1,6 +1,6 @@
 <odoo>
     <data>
-        <template id="assets_frontend" inherit_id="website_assets_frontend" name="garaje">
+        <template id="assets_frontend" inherit_id="website_assets_frontend" name="citasmedicas">
             <xpath expr="." position="inside">
                 <script type="text/javascript" src="/custom_website/static/src/js/website.js"</script>
                 <link rel="stylesheet" href="/custom_website/static/src/css/style.css" />
